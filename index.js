@@ -50,7 +50,7 @@ function grabarDB(){
 }
 function crearhtml(){
         salida.innerHTML=""
-    let arregloDB=JSON.parse(localStorage.getItem("tienda"))
+    let arregloDB=JSON.parse(localStorage.getItem("tienda")).reverse()
     for(let a of arregloDB){
         salida.innerHTML+=`
         <div class="grupo-tarea" id="${a.id}">
@@ -108,8 +108,6 @@ formulario.addEventListener("submit",e=>{
 
     if(nombre.value!=""&&apellido.value!=""&&precio.value!=""&&producto.value!=""&&descuento.value!=""){
         if(nombreL&&apellidoL&&productoL&&precioL&&descuentoL){
-
-        
         recogerDatos()
         grabarDB()
         crearhtml()

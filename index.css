@@ -2,50 +2,64 @@
     font-family: "public Sans";
     margin: auto;
 }
+body{
+    background-image: linear-gradient(rgb(255, 255, 255),rgb(0, 0, 255),rgb(255, 255, 255));
+    max-width: 1200px;
+}
 .cajaForm{
-    /* border:solid black 1px; */
     width:100%;
     margin: auto;
     position: relative;
     box-sizing: border-box;
 }
 .facturas{
-    background-color: green;
+    background-color: rgb(0, 48, 119);
     position: absolute;
     top:10px;
-    right: 5%;
+    right: 20%;
     padding: 5px;
     font-size: 18px;
-    color:white;
+    color:rgb(2, 221, 255);
     border-radius: 4px;
     cursor: pointer;
 }
+.facturas:hover{
+    background-color: rgb(2, 79, 195);
+    color:rgb(46, 227, 255);
+}
 .formulario{
-    /* border:solid blue 1px; */
-    width:60%;
+    width:40%;
     margin:20px auto;
-    padding: 10px;
-    background-color: rgb(57, 58, 57);
+    padding: 10px 0;
+    background-color: rgb(0, 56, 139);
+    border-radius: 3px;
+    box-shadow: 4px 4px 10px 1px rgb(1, 5, 131);
+
 }
 .formulario p{
     text-align: center;
     padding: 5px 0;
-    background-color: rgb(60, 105, 56);
-    color: white;
+    background-color: rgb(0, 48, 119);
+    color: rgb(2, 221, 255);
 }
 .formulario input[type="submit"]{
-    background-color: rgb(85, 134, 84);
+    background-color: rgb(74, 153, 195);
     padding: 5px;
     border:none;
     border-radius: 5px;
     margin: 10px;
     font-size: 20px;
-    color:white;
+    color:rgb(0, 48, 119);
     cursor: pointer;
+    transition: .5s;
+}
+.formulario input[type="submit"]:hover{
+    background-color: rgb(43, 112, 150);
+    color:rgb(202, 211, 224);
 }
 .grupo-input{
     width:100%;
-    background-color: rgb(219, 241, 215);
+    background-color: rgb(74, 153, 195);
     margin-bottom: 10px;
     padding: 5px 0px 5px 50px;
     box-sizing: border-box;
@@ -55,6 +69,7 @@
     height: 25px;
     border:none;
     font-size: 15px;
+    border-radius:5px;
 }
 .precio,.descuento{
     width:200px
@@ -65,14 +80,15 @@
 .grupo-input label{
     display: inline-block;
     width:100%;
+    color:rgb(0, 30, 53);
     box-sizing: border-box;
     font-size: 18px;
-    font-weight: bold;
 }
 
 /* *************************** */
 .cajaSalida{
     width:100%;
+    max-width: 1200px;
     height:100vh;
     position: fixed;
     top:0;
@@ -87,7 +103,7 @@
     right: 1%;
     top:15px;
     font-size: 20px;
-    color: red;
+    color: rgb(255, 168, 168);
     cursor: pointer;
 }
 .verFacturas{
@@ -97,13 +113,10 @@
     display: none;
 }
 .salida{
-    /* border:solid red 1px; */
     margin: 2px 0;
 }
 .grupo-tarea{
-    /* border:solid black 1px; */
     padding:0 0 15px;
-    /* display: flex; */
     margin: 10px 0;
     background-color: rgb(248, 245, 245);
 }
@@ -117,15 +130,15 @@
 
 .grupo-tarea h1{
     text-align: center;
-    background-color: aqua;
+    background-color: rgb(29, 29, 29);
+    color: rgb(255, 255, 255);
+
     padding: 5px 0;
     font-size: 35px;
 }
-
 .grupo-tarea>i{
     margin-left: 10px;
     cursor: pointer;
-    /* color: red; */
 }
 .fa-print{
     color:green
@@ -137,17 +150,6 @@
     border:none;
     margin-left: 10px;
     cursor: pointer;
-}
-.estadoFalse{
-    color:red
-}
-.estadoTrue{
-    color:green
-}
-
-
-.entrada{
-    width:50px
 }
 /* ************************ */
 @media(max-width:900px){
