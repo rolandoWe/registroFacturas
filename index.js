@@ -183,7 +183,7 @@ function verificarProducto(){
 let producto=document.querySelector(".producto").value;
     producto=producto.toLowerCase();
     let contar=0;
-let permitir="qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM";
+let permitir="qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM ";
 for(let n=0;n<producto.length;n++){
     for(let p=0;p<permitir.length;p++){
         if(producto[n]==permitir[p]){
