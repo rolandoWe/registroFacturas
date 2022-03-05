@@ -96,25 +96,40 @@ function eliminar(miId){
     localStorage.setItem("tienda",JSON.stringify(arreglo))
     crearhtml()
 }
-
-
-formulario.addEventListener("submit",e=>{
-    e.preventDefault()
-    let nombreL= document.querySelector(".lNombre").style.color=="black";
-    let apellidoL= document.querySelector(".lApellido").style.color=="black";
-    let productoL= document.querySelector(".lProducto").style.color=="black";
-    let precioL= document.querySelector(".lPrecio").style.color=="black";
-    let descuentoL= document.querySelector(".lDescuento").style.color=="black";
+function mostrarMensaje(){
+    document.querySelector(".mensajeOperacion").classList.toggle("verMensaje")
+    setTimeout(()=>{
+        document.querySelector(".mensajeOperacion").classList.remove("verMensaje")
+    },4000)
+}
+function operarApp(){
+    let nombreL= document.querySelector(".lNombre").style.color=="white";
+    let apellidoL= document.querySelector(".lApellido").style.color=="white";
+    let productoL= document.querySelector(".lProducto").style.color=="white";
+    let precioL= document.querySelector(".lPrecio").style.color=="white";
+    let descuentoL= document.querySelector(".lDescuento").style.color=="white";
 
     if(nombre.value!=""&&apellido.value!=""&&precio.value!=""&&producto.value!=""&&descuento.value!=""){
         if(nombreL&&apellidoL&&productoL&&precioL&&descuentoL){
+            if(descuento.value>100){
+                descuento.value=100
+            }
         recogerDatos()
         grabarDB()
         crearhtml()
     formulario.reset()
-        }
-       
+        }else{
+           document.querySelector(".mensajeOpe").innerHTML="Error, posibles caracteres no permitidos o formulario incompleto." 
+         mostrarMensaje()
+        }  
+    }else{
+         mostrarMensaje()
     }
+}
+
+formulario.addEventListener("submit",e=>{
+    e.preventDefault()
+   operarApp()
 })
 salida.addEventListener("click",ee=>{
     // console.log(ee.path)
@@ -139,7 +154,7 @@ for(let n=0;n<nombre.length;n++){
     }
 }
 if(nombre.length==contar){
-    document.querySelector(".lNombre").style.color="black";
+    document.querySelector(".lNombre").style.color="white";
 }else{
     document.querySelector(".lNombre").style.color="red";
 }
@@ -158,7 +173,7 @@ for(let n=0;n<apellido.length;n++){
     }
 }
 if(apellido.length==contar){
-    document.querySelector(".lApellido").style.color="black";
+    document.querySelector(".lApellido").style.color="white";
 }else{
     document.querySelector(".lApellido").style.color="red";
 }
@@ -177,7 +192,7 @@ for(let n=0;n<producto.length;n++){
     }
 }
 if(producto.length==contar){
-    document.querySelector(".lProducto").style.color="black";
+    document.querySelector(".lProducto").style.color="white";
 }else{
     document.querySelector(".lProducto").style.color="red";
 }
@@ -195,7 +210,7 @@ for(let n=0;n<precio.length;n++){
     }
 }
 if(precio.length==contar){
-    document.querySelector(".lPrecio").style.color="black";
+    document.querySelector(".lPrecio").style.color="white";
 }else{
     document.querySelector(".lPrecio").style.color="red";
 }
@@ -213,7 +228,7 @@ for(let n=0;n<descuento.length;n++){
     }
 }
 if(descuento.length==contar){
-    document.querySelector(".lDescuento").style.color="black";
+    document.querySelector(".lDescuento").style.color="white";
 }else{
     document.querySelector(".lDescuento").style.color="red";
 }
@@ -227,13 +242,26 @@ document.addEventListener("keyup",function(){
     verificarDescuento()
 })
 
-crearhtml()
-mantenerId()
 
 
 document.querySelector(".facturas").addEventListener("click",()=>{
+    mostrarTexto()
     document.querySelector(".cajaSalida").classList.toggle("cerrarfacturas")
 })
 document.querySelector(".fa-circle-xmark").addEventListener("click",()=>{
     document.querySelector(".cajaSalida").classList.toggle("cerrarfacturas")
 })
+document.querySelector(".salida").addEventListener("click",(b)=>{
+  if(b.target.className==="btn"){
+     mostrarTexto()
+      console.log("hola btn")
+  }
+})
+function mostrarTexto(){
+    let parrafo="No hay nada facturado.."
+    if(document.querySelector(".salida").innerHTML==""){
+        document.querySelector(".salida").innerHTML=`<p class="parra">${parrafo}</p>` 
+    }
+}
+crearhtml()
+mantenerId()

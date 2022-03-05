@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista</title>
+    <title>Facturas</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&display=swap" rel="stylesheet">
@@ -15,30 +15,34 @@
         <form action="" class="formulario">
             <p>DATOS DE LA PERSONA VENDEDORA.</p>
             <div class="grupo-input">
-                <label for="" class="lNombre">Ingrese su nombre</label>
-                <input type="text" class="nombre" placeholder="Nombre" minlength="3" maxlength="12">
+                <label for="nombre" class="lNombre">Ingrese su nombre</label>
+                <input type="text" class="nombre"id="nombre" placeholder="Nombre" minlength="3" maxlength="12">
             </div>
             <div class="grupo-input">
-                <label for="" class="lApellido">Ingrese su apellido</label>
-                <input type="text" class="apellido" placeholder="Apellido" minlength="3" maxlength="12">
+                <label for="apellido" class="lApellido">Ingrese su apellido</label>
+                <input type="text" class="apellido"id="apellido" placeholder="Apellido" minlength="3" maxlength="12">
             </div>
             <!-- ************* -->
             <p>DATOS DEL PRODUCTO A VENDER</p>
             <div class="grupo-input">
-                <label for="" class="lProducto">Producto</label>
-                <input type="text" class="producto" placeholder="Producto" minlength="3"maxlength="20">
+                <label for="producto" class="lProducto">Producto</label>
+                <input type="text" class="producto"id="producto" placeholder="Producto" minlength="3"maxlength="20">
             </div>
             <div class="grupo-input">
-                <label for="" class="lPrecio">Precio</label>
-                <input type="text" class="precio" placeholder="Precio">
+                <label for="precio" class="lPrecio">Precio</label>
+                <input type="text" class="precio"id="precio" placeholder="Precio">
             </div>
             <div class="grupo-input">
-                <label for="" class="lDescuento">Descuento</label>
-                <input type="text" class="descuento" placeholder="Descuento">
+                <label for="descuento" class="lDescuento">Descuento</label>
+                <input type="text" class="descuento"id="descuento" placeholder="Descuento"maxlength="3">
             </div>
     <input type="submit" value="Aplicar">
     
         </form>
+        <!-- mensaje -->
+        <div class="mensajeOperacion">
+            <p class="mensajeOpe">Por favor no sea imbécil y complete el formulario.</p>
+        </div>
     </div>
 
     <div class="cajaSalida cerrarfacturas">

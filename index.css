@@ -3,7 +3,7 @@
     margin: auto;
 }
 body{
-    background-image: linear-gradient(rgb(255, 255, 255),rgb(0, 0, 255),rgb(255, 255, 255));
+    background-image: linear-gradient(rgb(255, 255, 255),rgba(30, 82, 238, 0.5),rgb(255, 255, 255));
     max-width: 1200px;
 }
 .cajaForm{
@@ -31,7 +31,7 @@ body{
     width:40%;
     margin:20px auto;
     padding: 10px 0;
-    background-color: rgb(0, 56, 139);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url("imagenes/atardecer.png");
     border-radius: 3px;
     box-shadow: 2px 2px 10px 1px rgb(245, 245, 250);
 
@@ -39,27 +39,28 @@ body{
 .formulario p{
     text-align: center;
     padding: 5px 0;
-    background-color: rgb(0, 48, 119);
+    /* background-color: rgb(0, 48, 119); */
     color: rgb(2, 221, 255);
+    font-weight: bold;
+    text-shadow: 0 0 5px black;
+    background-color: rgb(0, 0, 0,.3);
 }
 .formulario input[type="submit"]{
-    background-color: rgb(74, 153, 195);
+    background-color: rgb(0, 0, 0,.8);
     padding: 5px;
     border:none;
     border-radius: 5px;
     margin: 10px;
     font-size: 20px;
-    color:rgb(0, 48, 119);
+    color:rgb(3, 177, 204);
     cursor: pointer;
     transition: .5s;
 }
 .formulario input[type="submit"]:hover{
-    background-color: rgb(43, 112, 150);
-    color:rgb(202, 211, 224);
+    background-color: rgb(43, 112, 150,.7);
 }
 .grupo-input{
     width:100%;
-    background-color: rgb(74, 153, 195);
     margin-bottom: 10px;
     padding: 5px 0px 5px 50px;
     box-sizing: border-box;
@@ -70,6 +71,7 @@ body{
     border:none;
     font-size: 15px;
     border-radius:5px;
+    background: rgb(255, 255, 255,.6);
 }
 .precio,.descuento{
     width:200px
@@ -80,9 +82,33 @@ body{
 .grupo-input label{
     display: inline-block;
     width:100%;
-    color:rgb(0, 30, 53);
+    color:white;
     box-sizing: border-box;
-    font-size: 18px;
+    font-size: 15px;
+    text-shadow: 1px 1px 6px rgb(2, 2, 2);
+}
+.mensajeOperacion{
+    background-color: rgb(0, 0, 0,.5);
+    position: fixed;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transform: translateX(-200%);
+}
+.verMensaje{
+    transform: translateX(0%);
+}
+.mensajeOpe{
+    background-color: rgb(253, 119, 119);
+    color:white;
+    width:100%;
+    font-size: 20px;
+    padding: 10px 0;
 }
 
 /* *************************** */
@@ -114,6 +140,13 @@ body{
 }
 .salida{
     margin: 2px 0;
+}
+.parra{
+    color:rgb(255, 255, 255);
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 30px;
 }
 .grupo-tarea{
     padding:0 0 15px;
@@ -170,7 +203,7 @@ body{
 }
 @media(max-width:576px){
     .formulario{
-        width: 90%;
+        width: 100%;
     }
     .facturas{
         top:50px;
