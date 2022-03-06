@@ -117,14 +117,26 @@ function operarApp(){
         recogerDatos()
         grabarDB()
         crearhtml()
+        exito()
     formulario.reset()
+
         }else{
+    document.querySelector(".mensajeOpe").classList.remove("operacionExitosa")
+
            document.querySelector(".mensajeOpe").innerHTML="Error, posibles caracteres no permitidos o formulario incompleto." 
          mostrarMensaje()
         }  
     }else{
+    document.querySelector(".mensajeOpe").classList.remove("operacionExitosa")
+
+    document.querySelector(".mensajeOpe").innerHTML="Por favor no sea imbécil y complete el formulario." 
          mostrarMensaje()
     }
+}
+function exito(){
+    document.querySelector(".mensajeOpe").classList.add("operacionExitosa")
+    document.querySelector(".mensajeOpe").innerHTML="Operacion exitosa." 
+    mostrarMensaje()
 }
 
 formulario.addEventListener("submit",e=>{
